@@ -1,19 +1,16 @@
-const express = require('express')(); //The express framework
-const app = express();
-const PORT = 8080; //The port used for the server
-const fs = require('fs'); //The file system
+var fs = require('fs'); // The use of file system
+var express = require('express'); // The express framework
+var app = express();
 
-app.use ( express.json() );
-
-app.get('/computiq.json', function(req, res){
-    fs.readFile(__dirname + "/" + "computiq.json", 'utf8', function(err, order){
-        console.log(oredr);
+app.get('/getcomputiq', function(req, res){
+    fs.readFile(__dirname + "/" + "comptiq.json", 'utf8', function(err, order){
+        console.log(order);
         res.end(order);
     });
 })
 
 var server = app.listen(8080, function(){
-var host = server.address().address
-var port = server.address().port
-console.log("REST API demo app listening at http://%s:%s", host, port)
+    var host = server.address().address
+    var port = server.address().port
+    console.log("You can access the API on the link at http://localhost:8080/getcomputiq")
 })
