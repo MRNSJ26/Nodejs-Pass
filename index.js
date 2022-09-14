@@ -14,3 +14,5 @@ var server = app.listen(8080, function(){
     var port = server.address().port
     console.log("You can access the API on the link at http://localhost:8080/getcomputiq")
 })
+
+//this soulution was inspired by kindsonthegenius!
